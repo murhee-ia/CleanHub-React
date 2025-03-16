@@ -1,0 +1,208 @@
+.banner-section {
+    margin: 2.5rem;
+    border: 1px solid rgba(231, 228, 228, 0.8);
+    border-radius: 0.6rem;
+    box-shadow: 0 12px 50px -12px rgba(0, 0, 0, 1);
+    backdrop-filter: blur(16px);
+    background: var(--gradient-green);
+}
+
+/* FOR THE NAVIGATIONS INSIDE THE BANNER */
+
+.banner-nav {
+    color: white;
+    padding: 0 30px;
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-container img {
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.logo-container span {
+    font-weight: bold;
+    font-size: x-large;
+    margin-left: 15px;
+}
+
+.buttons-container {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.button {
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+}
+
+.button:hover {
+    background-color: var(--green-900);
+}
+
+.main-button {
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: var(--green-950);
+    border: 0.1px solid var(--custom-white);
+    border-radius: 8px;
+}
+
+.main-button:hover {
+    background-color: white;
+    color: var(--green-500);
+}
+
+/* FOR THE CONTENT INSIDE THE BANNER */
+
+.banner-article-container {
+    padding: 0.5rem 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 0;
+}
+
+.article {
+    width: 50%;
+    text-align: left;
+}
+
+.article-h1, .article-h1 span {
+    font-family: "Oswald", sans-serif;
+    font-size: 45px;
+    font-weight: 400;
+    text-align: left;
+}
+
+.article-p {
+    padding-top: 10px;
+}
+
+.article-h1 span, .article-p span {
+    color: var(--green-500);
+}
+
+.bannerImg-container {
+    width: 50%;
+}
+
+.bannerImg-container img {
+    width: 100%;
+    height: auto;
+}
+
+/*========IPAD==========*/
+@media only screen and (min-width: 700px) and (max-width: 1024px) {
+    .banner-article-container {
+        flex-direction: column;
+    }
+    .article {
+        width: 100%;
+    }
+    .bannerImg-container {
+        position: relative;
+        width: 100%;
+        z-index: 1;
+    }
+    .article div {
+        position: absolute;
+        left: 45%;
+        margin-top: 20px;
+        z-index: 2;
+    }
+}
+
+/*==========iPAD==========*/
+@media only screen and (min-width: 700px) and (max-width: 840px) {
+    .bannerImg-container {
+        margin-top: 20px;
+    }
+    .article div {
+        position: absolute;
+        left: 43%;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        z-index: 2;
+    }
+}
+
+/*========MOBILE==========*/
+@media only screen and (max-width: 700px) {
+    .banner-section {
+        margin: 2rem;
+    }
+    /* navigation */
+    .banner-nav {
+        padding: 0 20px;
+    }
+    .logo-container span {
+        margin-left: 10px;
+    }
+    /* bar menu */
+    .buttons-container {
+        padding: 4px 0;
+        border-radius: 8px;
+        position: fixed;
+        top: 3px;
+        right: 3px;
+        width: 160px;
+        z-index: 999;
+        background-color: var(--green-950);
+        box-shadow: -6px 0 10px rgba(0, 0, 0, 0.4);
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    .buttons-container .button, .close-button {
+        width: 100%;
+        font-weight: 500;
+        box-sizing: border-box;
+    }
+    .buttons-container button {
+        text-align: left;
+        font-size: 16px;
+        padding: 0.5rem 1rem;
+    }
+    .close-button, .bar-button {
+        color: var(--custom-white);
+        background: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+    }
+    .FaBars {
+        font-size: x-large;
+    }
+    /* article content */
+    .banner-article-container {
+        padding: 0.5rem 1.5rem;
+    }
+    .article {
+        width: 100%;
+    }
+    .article-h1, .article-h1 span {
+        font-size: 30px;
+    }
+    .article-p, .article-p span {
+        font-size: small;
+    }
+    .bannerImg-container {
+        display: none;
+    }
+}
+

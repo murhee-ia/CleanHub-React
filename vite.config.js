@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     host: true,  // Listen on all available network interfaces
-    port: 5173,  // Default Vite port
+    port: 3000,  // Server will use this port
     cors: true   // Enable CORS for cross-origin requests
   }
 })
