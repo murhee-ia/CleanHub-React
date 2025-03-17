@@ -1,5 +1,6 @@
-import StarsCanvas from '../../components/HomeComponents/StarsCanvas'
-import Banner from '../../components/HomeComponents/Banner.jsx'
+import StarsCanvas from '../../components/LandingComponents/StarsCanvas'
+import Banner from '../../components/LandingComponents/Banner.jsx'
+import Features from '../../components/LandingComponents/Features.jsx'
 
 const LandingPage = () => {
 
@@ -16,6 +17,7 @@ const LandingPage = () => {
     <div className="bg-gradient-green" style={styles}>
       <StarsCanvas/>
       <Banner/>
+      <Features/>
     </div>
   )
 }
