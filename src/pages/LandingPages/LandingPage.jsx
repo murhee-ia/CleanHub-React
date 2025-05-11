@@ -1,3 +1,5 @@
+import StarsCanvas from '../../components/LandingComponents/StarsCanvas'
+
 const LandingPage = () => {
 
   const styles = {
@@ -11,6 +13,7 @@ const LandingPage = () => {
 
   return (
     <div className="bg-gradient-green" style={styles}>
+      <StarsCanvas/>
     </div>
   )
 }
