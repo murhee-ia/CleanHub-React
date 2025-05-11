@@ -197,97 +197,50 @@
 
 /* ====================G U I D E  S E C T I O N========================= */
 
-.carousel {
-    min-height: 85vh;
+.guide-grid {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2rem;
+    min-height: 50vh;
+}
+
+.guide-box {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    border: 1px solid var(--custom-white);
+    border-radius: 0.7rem;
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.carousel-container {
-    width: 100%;
-    background-color: var(--green-900);
-    padding: 2rem 1rem;
-    background-color: red;
+.guide-box:hover {
+    transform: scale(0.95);
+    box-shadow: 0 7px 15px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(15px);
 }
 
-.carousel-content {
-    margin: 0 1rem;
-    overflow: hidden;
+.guide-box img {
+    width: 250px;
+    height: 250px;
 }
 
-.card {
-    width: 400px;
-    border: 2px solid var(--custom-white);
-    border-radius: 1rem;
-    background-color: var(--custom-white);
-}
-
-.card-illustration-container, .card-content-container {
-    padding: 0.6rem;
+.guide-box-content {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
-.card-illustration-container {
-    row-gap: 0.5rem;
-    position: relative;
-}
-
-.overlay {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    background-color: var(--green-600);
-    border-radius: 1rem 1rem 0 2rem;
-}
-
-.overlay::before, .overlay::after {
-    content: '';
-    position: absolute;
-    height: 2rem;
-    width: 2rem;
-    background-color: var(--green-600);
-    right: 0;
-    bottom: -2rem;
-}
-
-.overlay::after {
-    border-radius: 0 2rem 0 0;
-    background-color: var(--custom-white);
-}
-
-.card-illustration {
-    position: relative;
-    height: 300px;
-    width: 500px;
-}
-
-.card-illustration .illustration {
-    height: 100%;
-    width: 100%;
-}
-
-.card-content-container {
-    margin: 0 0.6rem;
-}
-
-.step-title {
+.guide-box-content p {
     font-weight: 700;
+    font-size: x-large;
 }
 
-.trynow-btn {
-    border: none;
-    padding: 0.4rem 0.8rem;
-    border-radius: 0.6rem;
-    transition: all 0.3s ease;
-}
-
-.trynow-btn:hover {
-    
+.guide-box-content span {
+    font-family: 'Oswald';
 }
 
 
