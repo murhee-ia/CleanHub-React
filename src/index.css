@@ -29,3 +29,19 @@
   transform: translate(-3px, -3px);
   box-shadow: 5px 5px 0 0 var(--custom-white);
 }
+
+.letsbeginbutton-container {
+  padding: 1.25rem 0.2rem;
+}
+
+.letsbeginbutton-container button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--custom-white);
+  background-color: var(--green-950);
+}
+
+.letsbeginbutton-container button :first-child {
+  color: white;
+  font-size: medium;
+}
