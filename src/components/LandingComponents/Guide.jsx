@@ -1,4 +1,4 @@
-import guideStyles from "./Landing.module.css"
+import guideStyles from "./LandingComponents.module.css"
 import jobHuntingImg from "../../assets/images/jobHunting.svg"
 import jobRecruitingImg from "../../assets/images/jobRecruiting.svg"
 import requestHelpImg from "../../assets/images/requestHelp.svg"

@@ -1,4 +1,4 @@
-import featureStyles from "./Landing.module.css"
+import featureStyles from "./LandingComponents.module.css"
 import { FaCheck } from "react-icons/fa6"
 
 const Features = () => {

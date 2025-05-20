@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import {NavLink, Link} from 'react-router-dom'
-import bannerStyles from './Landing.module.css'
+import bannerStyles from './LandingComponents.module.css'
 import logoImg from '../../assets/images/logoImg.jpg'
 import bannerImg from '../../assets/images/bannerImg.png'
 import { FaBars } from 'react-icons/fa6'
