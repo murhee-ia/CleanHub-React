@@ -1,5 +1,6 @@
 import aboutStyles from './LandingPages.module.css'
-import { FaEye, FaFlag, FaMedal  } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
+import { FaEye, FaFlag, FaMedal, FaArrowLeft } from 'react-icons/fa'
 import profilePic from '../../assets/images/profile-pic.jpg'
 
 const AboutPage = () => {
@@ -61,6 +62,13 @@ const AboutPage = () => {
         </div>
       </section>
       <h1 className={aboutStyles['last-greetings']}>THANK YOU!</h1>
+      {/* GO BACK BUTTON */}
+      <div style={{textAlign: 'center'}}>
+        <Link to="/" className={aboutStyles['back-button']}>
+          <FaArrowLeft className={aboutStyles['back-icon']}/>
+          <span>Back</span>
+        </Link>
+      </div>
     </div>
   )
 }

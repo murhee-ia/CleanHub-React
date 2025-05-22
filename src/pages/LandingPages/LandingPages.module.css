@@ -153,8 +153,41 @@
   text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
 }
 
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 0.6rem;
+  background: var(--green-700);
+  color: var(--custom-white);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
+.back-button:hover {
+  background: var(--green-600);
+  transform: translateX(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
 
+.back-button:active {
+  transform: translateX(0);
+}
+
+.back-icon {
+  font-size: 12px;
+  transition: transform 0.3s ease;
+}
+
+.back-button:hover .back-icon {
+  transform: translateX(-2px);
+}
 
 
 
