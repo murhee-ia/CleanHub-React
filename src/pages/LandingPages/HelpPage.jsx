@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axiosClient from "../../../axios-client.js"
 import helpStyles from "./LandingPages.module.css"
 import { FaSearch, FaArrowLeft } from 'react-icons/fa'
+import Footer from "../../components/LandingComponents/Footer.jsx";
 
 
 const HelpPage = () => {
@@ -71,6 +72,7 @@ const HelpPage = () => {
           <span>Back</span>
         </Link>
       </div>
+      <Footer/>
     </div>
   )
 }

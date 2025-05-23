@@ -1,4 +1,4 @@
-/* ====================B A N N E R   S E C T I O N========================= */
+/* ==================== B A N N E R   S E C T I O N ========================= */
 
 .banner-section {
     margin: 2.5rem;
@@ -107,7 +107,7 @@
     height: auto;
 }
 
-/* ====================F E A T U R E S   S E C T I O N========================= */
+/* ==================== F E A T U R E S   S E C T I O N ========================= */
 
 .features-section, .guide-section {
     margin: 2.5rem;
@@ -195,7 +195,7 @@
 }
 
 
-/* ====================G U I D E  S E C T I O N========================= */
+/* ==================== G U I D E  S E C T I O N ========================= */
 
 .guide-grid {
     margin-top: 2rem;
@@ -213,7 +213,7 @@
     border: 1px solid var(--custom-white);
     border-radius: 0.7rem;
     backdrop-filter: blur(5px);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .guide-box:hover {
@@ -244,9 +244,111 @@
 }
 
 
+/* ==================== F O O T E R   S E C T I O N ========================= */
 
 
+.footer-container {
+    background-color: var(--green-950);
+    color: var(--custom-white);
+    padding: 1rem 1.5rem;
+    position: relative;
+    z-index: 1;
+    clip-path: ellipse(100% 100% at 50% 100%);
+    margin-top: 5rem;
+    padding-top: 85px;
+}
 
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 1rem;
+    margin-top: 1.5rem;
+}
+
+.footer-section h4 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.about h4 {
+    font-size: 1.5rem;
+}
+
+.footer-section h4::before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 80px;
+    height: 2px;
+    background-color: var(--custom-white);
+}
+
+.footer-section p, .footer-section a {
+    font-size: 1rem;
+    color: var(--custom-white);
+    margin-bottom: 0.8rem;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: var(--green-500);
+    transition: color 0.3s ease;
+}
+
+.contacts {
+    margin-left: -50px;
+}
+
+.contacts p {
+    display: flex;
+}
+
+/* Social Media Icons */
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icons a {
+    display: inline-block;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+}
+
+.social-icons a:hover {
+    color: var(--green-500);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    border-top: 1px solid var(--custom-white);
+    padding-top: 1rem;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+.footer-bottom p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+
+.footer-bottom a {
+    color: var(--custom-white);
+    text-decoration: underline;
+}
+
+.footer-bottom a:hover {
+    color: var(--green-500);
+}
 
 
 

@@ -2,6 +2,7 @@ import StarsCanvas from '../../components/LandingComponents/StarsCanvas'
 import Banner from '../../components/LandingComponents/Banner.jsx'
 import Features from '../../components/LandingComponents/Features.jsx'
 import Guide from '../../components/LandingComponents/Guide.jsx'
+import Footer from '../../components/LandingComponents/Footer.jsx'
 
 const LandingPage = () => {
 
@@ -20,6 +21,7 @@ const LandingPage = () => {
       <Banner/>
       <Features/>
       <Guide/>
+      <Footer/>
     </div>
   )
 }

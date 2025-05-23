@@ -2,6 +2,7 @@ import aboutStyles from './LandingPages.module.css'
 import { Link } from 'react-router-dom'
 import { FaEye, FaFlag, FaMedal, FaArrowLeft } from 'react-icons/fa'
 import profilePic from '../../assets/images/profile-pic.jpg'
+import Footer from '../../components/LandingComponents/Footer'
 
 const AboutPage = () => {
   return (
@@ -69,6 +70,7 @@ const AboutPage = () => {
           <span>Back</span>
         </Link>
       </div>
+      <Footer/>
     </div>
   )
 }
