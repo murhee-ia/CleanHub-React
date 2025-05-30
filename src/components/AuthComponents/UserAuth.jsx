@@ -1,13 +1,13 @@
 import authStyles from './UserAuth.module.css'
 import logoImg from '../../assets/images/logoImg.jpg'
-import axiosClient from '../../../axios-client'
+import axiosClient from '../../axios-client.js'
 import { useEffect, useRef, useState } from 'react'
 import { Link, useNavigate } from "react-router-dom"
 import { useStateContext } from '../../context/ContextProvider'
 
 const UserAuth = () => {
 
-  const { setUser, setToken } = useStateContext();
+  const { saveUser, saveToken } = useStateContext();
   const [errors, setErrors] = useState(null);
   const [message, setMessage] = useState(null);
 
@@ -96,8 +96,8 @@ const UserAuth = () => {
     }
     axiosClient.post('/auth/login', payload)
       .then(({data}) => {
-        setUser(data.user)
-        setToken(data.token, data.tokenExpiration)
+        saveUser(data.user)
+        saveToken(data.token)
       }).catch( error => {
         const response = error.response
         if (response && response.status == 401) {

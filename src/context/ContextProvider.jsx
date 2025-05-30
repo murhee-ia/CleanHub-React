@@ -1,43 +1,36 @@
-import {createContext, useContext, useState} from "react";
+import {createContext, useContext, useState, useEffect} from "react";
+import axiosClient from "../axios-client";
 
 const StateContext = createContext({
     currentUser: null,
     token: null,
-    tokenExpiration: null,
     setUser: () => {},
     setToken: () => {},
-    setTokenExpiration: () => {},
 });
 
 export const ContextProvider = ({children}) => {
     
-    const [currentUser, setUser] = useState({});
-    const [token, _setToken] = useState(localStorage.getItem('ACCESS_TOKEN'));
-    const [tokenExpiration, _setTokenExpiration] = useState(localStorage.getItem('TOKEN_EXPIRATION'));
+    const [currentUser, setUser] = useState(
+        JSON.parse(localStorage.getItem("current_user"))
+    );
+    const [token, setToken] = useState(localStorage.getItem("auth_token"));
 
-    
-    const setToken = (token, expiration) => {
-        _setToken(token)
-        _setTokenExpiration(expiration);
-        if (token) {
-            localStorage.setItem('ACCESS_TOKEN', token);
-            if (expiration) {
-                localStorage.setItem('TOKEN_EXPIRATION', expiration);
-            } else {
-                localStorage.removeItem('TOKEN_EXPIRATION');
-            }
-        } else {
-            localStorage.removeItem('ACCESS_TOKEN');
-            localStorage.removeItem('TOKEN_EXPIRATION');
-        }
+    const saveToken = (token) => {
+        setToken(token);
+        localStorage.setItem("auth_token", token);
+    };
+
+    const saveUser = (user) => {
+        setUser(user)
+        localStorage.setItem("current_user", JSON.stringify(user))
     }
 
     return (
         <StateContext.Provider value={{
             currentUser,
-            setUser,
+            saveUser,
             token,
-            setToken,
+            saveToken,
         }}>
             {children}
         </StateContext.Provider>
