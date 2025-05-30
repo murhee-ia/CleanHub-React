@@ -1,6 +1,6 @@
 import StarsCanvas from "../../components/LandingComponents/StarsCanvas"
 import UserAuth from "../../components/AuthComponents/UserAuth"
-import { useNavigate } from "react-router-dom"
+import { Navigate } from "react-router-dom"
 import { useStateContext } from "../../context/ContextProvider.jsx"
 import { motion } from "framer-motion"
 import { useEffect } from "react"
@@ -27,17 +27,14 @@ const slideIn = (direction, type, delay, duration) => {
 const AuthPage = () => {
 
   const {currentUser, token} = useStateContext()
-  const navigate = useNavigate();
 
-  useEffect(() => {
-    if (token && currentUser) {
-      if (currentUser.role == 'normal') {
-        navigate("/hub");
-      } else if (currentUser.role == 'admin') {
-        navigate("/admin-panel");
-      }
+  if (token && currentUser) {
+    if (currentUser.role == 'normal') {
+      return <Navigate to="/hub" />;
+    } else if (currentUser.role == 'admin') {
+      return <Navigate to="/admin-panel" />;
     }
-  }, [token, currentUser])
+  }
 
   const styles = {
     height: '100vh',

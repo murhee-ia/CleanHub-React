@@ -17,12 +17,20 @@ export const ContextProvider = ({children}) => {
 
     const saveToken = (token) => {
         setToken(token);
-        localStorage.setItem("auth_token", token);
+        if (token) {
+            localStorage.setItem("auth_token", token);
+        } else {
+            localStorage.removeItem("auth_token");
+        }
     };
 
     const saveUser = (user) => {
         setUser(user)
-        localStorage.setItem("current_user", JSON.stringify(user))
+        if (user) {
+            localStorage.setItem("current_user", JSON.stringify(user))
+        } else {
+            localStorage.removeItem("current_user");
+        }
     }
 
     return (

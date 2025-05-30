@@ -22,6 +22,15 @@ const DefaultLayout = () => {
     return <Navigate to="/admin-panel" />;
   }
 
+  const onLogout = (event) => {
+    event.preventDefault();
+    axiosClient.post('/logout')
+      .then(() => {
+        saveUser(null);
+        saveToken(null);
+      });
+  };
+
 
   return (
     <div className="homepage-container bg-gradient-green">
@@ -56,7 +65,7 @@ const DefaultLayout = () => {
             <Link to="/hub/notifications" className="h-nav-link">
               <li><FaBell /><span>Notifications</span></li>
             </Link>
-            <Link to="/" className="h-nav-link">
+            <Link to="/" className="h-nav-link" onClick={onLogout}>
               <li><FaPowerOff /><span>Log Out</span></li>
             </Link>
           </ul>
