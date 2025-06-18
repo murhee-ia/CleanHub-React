@@ -1,6 +1,7 @@
 import {Link, Navigate, Outlet} from "react-router-dom"
 import {useStateContext} from "../context/ContextProvider.jsx"
 import axiosClient from "../axios-client.js"
+import profilePic from "../assets/images/profile-pic.jpg"
 import { 
   FaUser, 
   FaHome, 
@@ -39,7 +40,7 @@ const DefaultLayout = () => {
           <Link to='/'><h1>CleanHub</h1></Link>
         </div>
         <div className="h-profile-section">
-          <img className="h-profile-picture" src='' alt="Profile Picture"/>
+          <img className="h-profile-picture" src={profilePic} alt="Profile Picture"/>
           <div>
             <h3>{currentUser.full_name}</h3>
             <p><i>@{currentUser.user_name}</i></p>

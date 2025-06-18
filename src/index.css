@@ -79,7 +79,7 @@
 }
 
 .h-profile-section {
-  margin: 40px 0 10px;
+  margin: 30px 0 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -87,19 +87,21 @@
 }
 
 .h-profile-picture {
-  max-width: 100px;
-  max-height: 100px;
+  max-width: 60px;
+  max-height: 60px;
   border-radius: 50%;
   margin-bottom: 10px;
 }
 
 .h-profile-section h3 {
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 14px;
+  word-wrap: break-word;
 }
 
 .h-profile-section p {
-  font-size: 0.8rem;
+  font-size: 12px;
+  word-wrap: break-word;
 }
 
 .h-navigation-links ul {
