@@ -1,5 +1,4 @@
-import {createContext, useContext, useState, useEffect} from "react";
-import axiosClient from "../axios-client";
+import {createContext, useContext, useState} from "react";
 
 const StateContext = createContext({
     currentUser: null,
@@ -13,7 +12,9 @@ export const ContextProvider = ({children}) => {
     const [currentUser, setUser] = useState(
         JSON.parse(localStorage.getItem("current_user"))
     );
-    const [token, setToken] = useState(localStorage.getItem("auth_token"));
+    const [token, setToken] = useState(
+        localStorage.getItem("auth_token")
+    );
 
     const saveToken = (token) => {
         setToken(token);

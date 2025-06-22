@@ -31,7 +31,8 @@ const AuthPage = () => {
   if (token && currentUser) {
     if (currentUser.role == 'normal') {
       return <Navigate to="/hub" />;
-    } else if (currentUser.role == 'admin') {
+    }
+    if (currentUser.role == 'admin') {
       return <Navigate to="/admin-panel" />;
     }
   }

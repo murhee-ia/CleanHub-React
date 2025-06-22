@@ -11,8 +11,6 @@ const UserAuth = () => {
   const [errors, setErrors] = useState(null);
   const [message, setMessage] = useState(null);
 
-  const navigate = useNavigate();
-
   // Refs to access elements for CSS modifications
   const container = useRef(null);
   const toSigninButton = useRef(null);
