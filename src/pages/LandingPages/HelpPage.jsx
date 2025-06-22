@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Link } from "react-router-dom";
-import axiosClient from "../../../axios-client.js"
+import axiosClient from "../../axios-client.js"
 import helpStyles from "./LandingPages.module.css"
 import { FaSearch, FaArrowLeft } from 'react-icons/fa'
 import Footer from "../../components/LandingComponents/Footer.jsx";
