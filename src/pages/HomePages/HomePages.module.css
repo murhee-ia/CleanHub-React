@@ -1,3 +1,234 @@
-.home-page {
+.page-header {
   color: var(--custom-white);
+  margin-bottom: 2rem;
+}
+
+.profile-container {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  align-items: flex-start;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.6);
+}
+
+.user-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.profile-header {
+  margin-bottom: 1rem;
+}
+
+.profile-name {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--custom-white);
+  margin: 0 0 0.25rem 0;
+  line-height: 1.2;
+}
+
+.profile-username {
+  font-size: 1rem;
+  color: var(--green-500);
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.info-card {
+  background: var(--custom-white);
+  border-radius: 0.8rem;
+  padding: 1rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.info-card:hover {
+  border: 2px solid var(--green-500);
+}
+
+.info-icon {
+  font-size: 1.25rem;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--green-600);
+  border-radius: 6px;
+  color: white;
+  flex-shrink: 0;
+}
+
+.info-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.info-label {
+  font-weight: 500;
+  color: #374151;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+.info-value {
+  display: block;
+  word-break: break-word;
+}
+
+.bio-section {
+  background: var(--custom-white);
+  border-radius: 0.8rem;
+  padding: 1rem;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.bio-section:hover {
+  border: 2px solid var(--green-500);
+}
+
+.bio-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #374151;
+  margin: 0 0 0.75rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.75rem;
+}
+
+.bio-content {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.profile-picture-section {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile-picture-container {
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+
+.profile-picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--custom-white);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.profile-picture-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--custom-white);
+  border: 3px solid var(--custom-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--green-500);
+  font-weight: 400;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.profile-picture-placeholder:hover {
+  background: var(--custom-white);
+  border-color: var(--green-500);
+}
+
+.placeholder-icon {
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+}
+
+.placeholder-text {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #9ca3af;
+}
+
+.profile-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: #22c55e;
+  color: white;
+  border-radius: 12px;
+  padding: 0.125rem 0.5rem;
+  font-size: 0.625rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 2px solid white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  font-size: 1rem;
+  color: #6b7280;
+  background: #ffffff;
+  border-radius: 12px;
+  margin: 2rem 0;
+  border: 1px solid #e5e7eb;
+}
+
+.close-button {
+  background: none;
+  border: 1px solid var(--green-700);
+  border-radius: 4px;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--green-700);
+  margin-bottom: 20px;
+}
+
+.modal-input-div input, .modal-input-div textarea {
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  margin: 20px 0;
+}
+
+.modal-input-div button {
+  background-color: var(--green-600);
+  color: var(--custom-white);
+  width: 100%;
+  padding: 6px 0;
+  border: none;
+  border-radius: 4px;
+  margin-top: 6px;
 }

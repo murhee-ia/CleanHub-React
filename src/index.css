@@ -64,7 +64,6 @@
   flex-direction: column;
   padding: 20px;
   box-sizing: border-box;
-  border-right: rgba(204, 204, 204, 0.2) solid 1px;
   color: white;
   text-align: center;
 }

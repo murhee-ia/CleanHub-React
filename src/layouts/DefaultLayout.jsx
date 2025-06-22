@@ -40,7 +40,11 @@ const DefaultLayout = () => {
           <Link to='/'><h1>CleanHub</h1></Link>
         </div>
         <div className="h-profile-section">
-          <img className="h-profile-picture" src={profilePic} alt="Profile Picture"/>
+          <img 
+            className="h-profile-picture" 
+            src={`${import.meta.env.VITE_API_BASE_URL}${currentUser.profile_picture}`} 
+            alt="Profile Picture"
+          />
           <div>
             <h3>{currentUser.full_name}</h3>
             <p><i>@{currentUser.user_name}</i></p>

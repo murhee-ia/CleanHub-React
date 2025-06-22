@@ -3,13 +3,15 @@ import {createContext, useContext, useState} from "react";
 const StateContext = createContext({
     currentUser: null,
     token: null,
-    setUser: () => {},
+    setCurrentUser: () => {},
     setToken: () => {},
+    userInfo: null,
+    setUserInfo: () => {},
 });
 
 export const ContextProvider = ({children}) => {
     
-    const [currentUser, setUser] = useState(
+    const [currentUser, setCurrentUser] = useState(
         JSON.parse(localStorage.getItem("current_user"))
     );
     const [token, setToken] = useState(
@@ -26,7 +28,7 @@ export const ContextProvider = ({children}) => {
     };
 
     const saveUser = (user) => {
-        setUser(user)
+        setCurrentUser(user)
         if (user) {
             localStorage.setItem("current_user", JSON.stringify(user))
         } else {
@@ -34,12 +36,17 @@ export const ContextProvider = ({children}) => {
         }
     }
 
+    const [userInfo, setUserInfo] = useState({});
+
+
     return (
         <StateContext.Provider value={{
             currentUser,
             saveUser,
             token,
             saveToken,
+            userInfo,
+            setUserInfo,
         }}>
             {children}
         </StateContext.Provider>
