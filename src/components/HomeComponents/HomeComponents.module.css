@@ -20,3 +20,95 @@
   display: flex;
   flex-direction: column;
 }
+
+
+/* =================== J O B   C A R D S =========================== */
+
+.jobcard {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 1rem;
+  background-color: var(--custom-white);
+  border-radius: 12px;
+}
+
+.jobcard-category {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.6);
+  padding: 0.2rem 0.5rem;
+  border-radius: 8px;
+  font-size: small;
+}
+
+.jobcard-main-info {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 0.5rem;
+}
+
+.jobcard-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.jobcard-payment, .jobcard-employer {
+  font-weight: 500;
+}
+
+.jobcard-payment :first-child {
+  color: var(--green-700);
+  font-size: x-large;
+  margin-right: 0.2rem;
+}
+
+.line-separator {
+  margin: 1rem 0;
+  border-top: 1px solid #ccc;
+}
+
+.jobcard-payment, .jobcard-location, .jobcard-employer {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.jobcard > div:last-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.jobcard > div:last-child > div:last-child {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.jobcard-view-btn {
+  border: none;
+  background: none;
+}
+
+.jobcard-view-btn > :first-child {
+  color: var(--green-950);
+  background-color: var(--custom-white);
+  padding: 0.2rem 1rem;
+  border: 1px solid var(--green-900);
+  border-radius: 50px;
+  transition: transform 0.1s ease;
+  font-size: small;
+}
+
+.jobcard-save-icon {
+  color: var(--green-600);
+  font-size: large;
+  border: none;
+  background: none;
+}
+
+.jobcard-view-btn:hover {
+  transform: scale(1.10);
+}
