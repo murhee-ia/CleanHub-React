@@ -1,9 +1,9 @@
 import { useEffect, useLayoutEffect, useState, useRef } from 'react';
 import axiosClient from '../../axios-client';``
 import PageTitle from '../../components/HomeComponents/PageTitle'
+import JobCardsContainer from '../../components/HomeComponents/JobCardsContainer';
 import feedStyles from './HomePages.module.css'
 import { FaSearch } from 'react-icons/fa'
-import JobCard from '../../components/HomeComponents/JobCard';
 
 const FeedPage = () => {
 
@@ -11,9 +11,6 @@ const FeedPage = () => {
   const [categories, setCategories] = useState([]);
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("All");
-
-  const cardDetailsRefs = useRef([])
-  const [maxHeight, setMaxHeight] = useState(0);
 
   useEffect(() => {
     // FETCHING CATEGORIES
@@ -36,16 +33,6 @@ const FeedPage = () => {
     });
 
   }, [category, search]);
-
-  useLayoutEffect(() => {
-    const calculateHeights = () => {
-      const heights = cardDetailsRefs.current.map((ref) => ref?.offsetHeight || 0);
-      const max = Math.max(...heights);
-      setMaxHeight(max);
-    };
-    const frame = requestAnimationFrame(calculateHeights);
-    return () => cancelAnimationFrame(frame);
-  }, [jobs]);
 
   const handleChangeCategory = (newCategory) => {
     setCategory(newCategory)
@@ -87,30 +74,7 @@ const FeedPage = () => {
           </ul>
         </div>
         {/* JOB CARDS */}
-        <div className={feedStyles["job-cards-section"]}>
-          <div className={feedStyles["job-cards-container"]}>
-            {
-              jobs.length == 0 
-                ? (<h1 
-                    style={{
-                      margin:'20px', 
-                      color:'white', 
-                      fontSize:'1.5rem', 
-                      fontWeight:'600'
-                    }}>
-                    No Jobs Available.
-                  </h1>)
-                : (jobs.map( (job, index)=> (
-                  <JobCard 
-                    key={index}
-                    job={job}
-                    ref={(element) => (cardDetailsRefs.current[index] = element)}
-                    maxHeight={maxHeight}
-                  />
-                )))
-            }
-          </div>
-        </div>
+        <JobCardsContainer jobs={jobs} />
       </div>
     </div>
   )

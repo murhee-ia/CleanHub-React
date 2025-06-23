@@ -21,6 +21,17 @@
   flex-direction: column;
 }
 
+/* =================== J O B   C A R D S   C O N T A I N E R =========================== */
+
+.job-cards-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  overflow-y: auto;
+  padding: 1rem;
+  max-height: 68vh;
+}
+
 
 /* =================== J O B   C A R D S =========================== */
 

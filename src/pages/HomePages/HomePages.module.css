@@ -247,6 +247,10 @@
   color: var(--green-950);
 }
 
+.search-bar input:focus {
+  outline: none;
+}
+
 .search-button {
   width: 15%;
   padding: 0.6rem 0;
@@ -299,18 +303,6 @@
 
 .job-categories-section ul li:hover button {
   color: white;
-}
-
-.job-cards-section {
-  max-height: 68vh;
-  overflow-y: auto;
-}
-
-.job-cards-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.2rem;
-  padding: 1rem;
 }
 
 
