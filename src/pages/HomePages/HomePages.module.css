@@ -1,7 +1,12 @@
 .page-header {
   color: var(--custom-white);
   margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
+/* ==================== P R O F I L E   P A G E ============================= */
 
 .profile-container {
   display: flex;
@@ -159,9 +164,8 @@
   transition: all 0.2s ease;
 }
 
-.profile-picture-placeholder:hover {
-  background: var(--custom-white);
-  border-color: var(--green-500);
+.profile-picture:hover, .profile-picture-placeholder:hover {
+  border: 3px solid var(--green-500);
 }
 
 .placeholder-icon {
@@ -173,22 +177,6 @@
   font-size: 0.75rem;
   font-weight: 400;
   color: #9ca3af;
-}
-
-.profile-badge {
-  position: absolute;
-  top: -4px;
-  right: -4px;
-  background: #22c55e;
-  color: white;
-  border-radius: 12px;
-  padding: 0.125rem 0.5rem;
-  font-size: 0.625rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  border: 2px solid white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .loading {
@@ -232,3 +220,90 @@
   border-radius: 4px;
   margin-top: 6px;
 }
+
+/* ==================== F E E D   P A G E ============================= */
+
+.search-bar-section {
+  box-sizing: border-box;
+  width: 40%;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-radius: 60px;
+  padding: 0.2rem;
+  background: linear-gradient(to right, var(--green-600), var(--green-500), var(--green-700));
+}
+
+.search-bar input {
+  width: 85%;
+  padding: 0.5rem 0.5rem 0.5rem 1.2rem;
+  border: none;
+  border-radius: 60px 0 0 60px;
+  background-color: var(--custom-white);
+  color: var(--green-950);
+}
+
+.search-bar input:focus {
+  outline: none;
+}
+
+.search-button {
+  width: 15%;
+  padding: 0.6rem 0;
+  border: none;
+  border-radius: 0px 60px 60px 0;
+  background-color: var(--custom-white);
+  display: flex;
+  justify-content: center;
+}
+
+.search-icon {
+  color: var(--green-950);
+  font-size: larger;
+}
+
+.job-categories-section h3 {
+  color: white;
+  font-weight: 600;
+}
+
+.job-categories-section ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  overflow-y: auto;
+  margin: 0;
+  margin-top: 10px;
+  padding: 0.5rem 0;
+  gap: 1rem;
+  scrollbar-width: none;
+}
+
+.job-categories-section ul li {
+  background-color: #edf6f9;
+  padding: 5px 12px;
+  border-radius: 50px;
+}
+
+.job-categories-section ul li button {
+  color: black;
+  border: none;
+  background: none;
+  text-wrap: nowrap;
+}
+
+.job-categories-section ul li:hover {
+  background-color: var(--green-950);
+  box-shadow: 0 2px 5px rgba(221, 219, 219, 0.4);
+}
+
+.job-categories-section ul li:hover button {
+  color: white;
+}
+
+
+
