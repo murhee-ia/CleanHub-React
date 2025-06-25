@@ -25,7 +25,7 @@ const JobCard = React.forwardRef(({job, maxHeight}, ref) => {
         const savedJobs = data.saved ? JSON.parse(data.saved) : [];
         setIsSaved(savedJobs.includes(job.id))
       })
-  }, [setUserInfo])
+  }, [isSaved])
 
   const handleSaveJob = () => {
     if (!token) {
@@ -45,7 +45,7 @@ const JobCard = React.forwardRef(({job, maxHeight}, ref) => {
       }).catch((error) => {
         console.error("Error saving job: ", error);
       });
-    }
+  }
 
   const truncatedTitle = job.title.length > 60 ? job.title.substring(0, 60) + '...' : job.title;
 

@@ -307,3 +307,273 @@
 
 
 
+/* ==================== S H O W   J O B   P A G E ============================= */
+
+.showJobContainer {
+  background-color: var(--custom-white);
+  border: 1px solid var(--custom-white);
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--green-700);
+  background: none;
+  border: none;
+}
+
+/* Header Section */
+.header {
+  background: var(--gradient-green);
+  color: white;
+  padding: 20px;
+  position: relative;
+}
+
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: small;
+  margin-bottom: 10px;
+  padding: 4px 10px;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s;
+}
+
+.backButton:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.titleSection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.jobTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.category {
+  background-color: var(--green-900);
+  color: var(--custom-white);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: small;
+  font-weight: 500;
+  align-self: flex-start;
+}
+
+/* Main Content Layout */
+.mainContent {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 30px;
+  padding: 20px;
+  background-color: var(--custom-white);
+}
+
+.leftColumn, .rightColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Recruiter Card */
+.recruiterCard, .section, .detailsCard {
+  background-color: white;
+  border-radius: 12px;
+  padding: 15px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.recruiterHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.recruiterAvatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--custom-white);
+}
+
+.recruiterInfo {
+  flex: 1;
+}
+
+.recruiterFullName {
+  font-weight: 600;
+  color: var(--green-950);
+}
+
+/* Sections */
+
+.sectionTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--green-900);
+  margin: 0 0 10px 0;
+  border-bottom: 1px solid var(--green-500);
+  padding-bottom: 8px;
+}
+
+.description,
+.qualifications {
+  color: var(--green-950);
+  line-height: 1.7;
+  font-size: 0.85rem;
+}
+
+/* Media Section */
+.mediaContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mainImage {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--custom-white);
+}
+
+.selectedImage {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.thumbnails {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.thumbnail:hover {
+  border-color: var(--green-500);
+}
+
+.activeThumbnail {
+  border-color: var(--green-600) !important;
+}
+
+/* Details Card */
+
+.cardTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--green-900);
+  margin: 0 0 20px 0;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 12px;
+}
+
+.detailItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.detailItem:last-child {
+  margin-bottom: 0;
+}
+
+.detailLabel {
+  font-family: 'oswald';
+  font-weight: 600;
+  color: var(--green-700);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.detailValue {
+  color: var(--green-950);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Action Buttons */
+.actionButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.applyButton {
+  background: var(--gradient-green);
+  color: white;
+  border: none;
+  padding: 16px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 12px rgba(46, 213, 77, 0.3);
+}
+
+.applyButton:hover {
+  transform: translateY(-2px);
+}
+
+.saveButton {
+  background-color: white;
+  color: var(--green-800);
+  border: 2px solid var(--green-700);
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.saveButton:hover {
+  transform: scale(0.95);
+}
+
+.saveButton.saved {
+  background-color: var(--green-600);
+  border-color: var(--green-600);
+  color: white;
+}
+
+.saveButton i {
+  font-size: 16px;
+}
