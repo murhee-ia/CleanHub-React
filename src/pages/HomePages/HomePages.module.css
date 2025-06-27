@@ -309,12 +309,13 @@
 
 /* ==================== S H O W   J O B   P A G E ============================= */
 
-.showJobContainer {
+.showContainer {
   background-color: var(--custom-white);
   border: 1px solid var(--custom-white);
-  border-radius: 1.5rem;
+  border-radius: 1rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
+  overflow-y: auto;
+  scrollbar-width: none;
 }
 
 .loading {
@@ -394,7 +395,7 @@
 }
 
 /* Recruiter Card */
-.recruiterCard, .section, .detailsCard {
+.recruiterCard, .showJobSection, .detailsCard {
   background-color: white;
   border-radius: 12px;
   padding: 15px;
@@ -454,7 +455,6 @@
   width: 100%;
   border-radius: 8px;
   overflow: hidden;
-  background-color: var(--custom-white);
 }
 
 .selectedImage {
@@ -531,23 +531,6 @@
   gap: 12px;
 }
 
-.applyButton {
-  background: var(--gradient-green);
-  color: white;
-  border: none;
-  padding: 16px 24px;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 4px 12px rgba(46, 213, 77, 0.3);
-}
-
-.applyButton:hover {
-  transform: translateY(-2px);
-}
-
 .saveButton {
   background-color: white;
   color: var(--green-800);
@@ -574,6 +557,109 @@
   color: white;
 }
 
-.saveButton i {
-  font-size: 16px;
+/* ==================== J O B   P O S T S  P A G E ============================= */
+
+.post-bar-button {
+  margin: 0 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--custom-white);
+  border-radius: 24px;
+  padding: 0.5rem 1.5rem;
+  transition: transform 0.1s ease-in-out;
+  color: var(--custom-white);
+}
+
+.post-bar-button :first-child {
+  margin-right: 6px;
+}
+
+.post-bar-button:hover {
+  transform: scale(1.10);
+  background-color: var(--custom-white);
+  color: var(--green-800);
+  box-shadow: 3px 3px 5px rgba(4, 37, 18, 0.6);
+}
+
+
+
+/* ==================== C R E A T E   J O B   P A G E ============================= */
+
+
+.post-job-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.post-job-form label:not(.file-input-label) {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+.post-job-form label :first-child {
+  margin-right: 5px;
+  color: rgba(4, 37, 18, 0.8);
+}
+
+.post-job-form input, .post-job-form select, .post-job-form textarea, .file-input-label {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--green-900);
+  border-radius: 10px;
+  background-color: var(--custom-white);
+}
+
+.post-job-form input:focus, .post-job-form select:focus, .post-job-form textarea:focus {
+  outline: none;
+  border-color: var(--green-700);
+  background-color: white;
+}
+
+.post-job-form button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.2rem 0 1rem;
+}
+
+.previewJobContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.imagePreview {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.imagePreview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.imagePreview button {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 12px;
+  width: 20px;
+  height: 20px;
 }

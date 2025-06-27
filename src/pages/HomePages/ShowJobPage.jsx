@@ -11,19 +11,28 @@ const ShowJobPage = () => {
 
   const { userInfo, setUserInfo } = useStateContext();
   const [job, setJob] = useState(null);
+  const [mediaPaths, setMediaPaths] = useState([]);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [isSaved, setIsSaved] = useState(false);
 
   useEffect(() => {
     axiosClient.get(`/job/${jobID}`)
       .then(({data}) => {
+
         setJob(data);
+
         const savedJobs = userInfo.saved ? JSON.parse(userInfo.saved) : [];
         setIsSaved(savedJobs.includes(Number(jobID)));
+
+        const mediaPaths = Array.isArray(data.media_paths)
+          ? data.media_paths
+          : JSON.parse(data.media_paths) || [];
+        setMediaPaths(mediaPaths);
       })
       .catch(error => {
         console.error("Error fetching job details:", error);
       });
-  }, [jobID, isSaved]);
+  }, [isSaved]);
 
   const isJobOwner = userInfo && job && (userInfo.id === job.job_recruiter.id);
 
@@ -54,14 +63,14 @@ const ShowJobPage = () => {
 
   if (!job) {
     return (
-      <div className={showStyles.showJobContainer}>
+      <div className={showStyles.showContainer}>
         <div className={showStyles.loading}>Loading job details...</div>
       </div>
     );
   }
 
   return (
-    <div className={showStyles.showJobContainer}>
+    <div className={showStyles.showContainer}>
       {/* Header Section */}
       <div className={showStyles.header}>
         <Link to="/hub/feed" className={showStyles.backButton}>
@@ -97,7 +106,7 @@ const ShowJobPage = () => {
           </div>
 
           {/* Job Description */}
-          <div className={showStyles.section}>
+          <div className={showStyles.showJobSection}>
             <h2 className={showStyles.sectionTitle}>Job Description</h2>
             <div className={showStyles.description}>
               {job.description}
@@ -105,7 +114,7 @@ const ShowJobPage = () => {
           </div>
 
           {/* Qualifications */}
-          <div className={showStyles.section}>
+          <div className={showStyles.showJobSection}>
             <h2 className={showStyles.sectionTitle}>Qualifications</h2>
             <div className={showStyles.qualifications}>
               {job.qualifications}
@@ -113,20 +122,21 @@ const ShowJobPage = () => {
           </div>
 
           {/* Media Section */}
-          {job.media_paths && job.media_paths.length > 0 && (
-            <div className={showStyles.section}>
+          {mediaPaths.length > 0 && (
+            <div className={showStyles.showJobSection}>
               <h2 className={showStyles.sectionTitle}>Job Images</h2>
               <div className={showStyles.mediaContainer}>
                 <div className={showStyles.mainImage}>
                   <img 
-                    src={job.media_paths[selectedImageIndex]} 
+                    src={mediaPaths[selectedImageIndex]} 
                     alt={`Job image ${selectedImageIndex + 1}`}
                     className={showStyles.selectedImage}
                   />
                 </div>
-                {job.media_paths.length > 1 && (
+                {/* Thumbnail */}
+                {mediaPaths.length > 1 && (
                   <div className={showStyles.thumbnails}>
-                    {job.media_paths.map((path, index) => (
+                    {mediaPaths.map((path, index) => (
                       <img
                         key={index}
                         src={path}
@@ -175,7 +185,7 @@ const ShowJobPage = () => {
               isJobOwner ? (
                 job.application_status && job.approved_status ? (
                   <button 
-                    className={showStyles.applyButton}
+                    className='single-page-btn'
                     onClick={handleCloseApplication}
                   >
                     Close Application
@@ -183,7 +193,7 @@ const ShowJobPage = () => {
                 ) : null
               ) : (
                 <button 
-                  className={showStyles.applyButton}
+                  className='single-page-btn'
                   style={job.application_status ? {display:'unset'} : {display:'none'} }
                   onClick={handleApply}
                 >
