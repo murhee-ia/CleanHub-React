@@ -32,7 +32,7 @@ const ShowJobPage = () => {
       .catch(error => {
         console.error("Error fetching job details:", error);
       });
-  }, [isSaved]);
+  }, [job, isSaved]);
 
   const isJobOwner = userInfo && job && (userInfo.id === job.job_recruiter.id);
 
@@ -56,9 +56,23 @@ const ShowJobPage = () => {
   }
 
   const handleApply = () => {
+    axiosClient.post(`/job/apply/${jobID}`)
+      .then(({data}) => {
+        alert(data.message)
+      }).catch((error) => {
+        console.error("Error applying for the job:", error);
+        alert("An error occurred while applying for the job.");
+      });
   }
 
   const handleCloseApplication = () => {
+    axiosClient.put(`/job/${jobID}`, { application_status: false })
+      .then((response) => {
+        setJob(response.data.job);
+        alert(response.data.message);
+      }).catch((error) => {
+        console.error("Error updating application status:", error);
+      });
   }
 
   if (!job) {
@@ -190,7 +204,7 @@ const ShowJobPage = () => {
                   >
                     Close Application
                   </button>
-                ) : <span>Pending...</span>
+                ) : null
               ) : (
                 <button 
                   className='single-page-btn'
