@@ -18,7 +18,7 @@ const JobCardsContainer = ({jobs}) => {
   }, [jobs]);
 
   return (
-    <div className={jobCardsContainerStyles["job-cards-section"]}>
+    <div className={jobCardsContainerStyles["job-cards-container"]}>
       {
         jobs.length == 0 
           ? (<h1 

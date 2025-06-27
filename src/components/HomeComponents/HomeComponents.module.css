@@ -23,7 +23,7 @@
 
 /* =================== J O B   C A R D S   C O N T A I N E R =========================== */
 
-.job-cards-section {
+.job-cards-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.2rem;
@@ -86,13 +86,13 @@
   gap: 0.2rem;
 }
 
-.jobcard > div:last-child {
+.jobcard-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.jobcard > div:last-child > div:last-child {
+.jobcard-footer > div:last-child {
   display: flex;
   align-items: center;
   gap: 0.6rem;
@@ -122,4 +122,78 @@
 
 .jobcard-view-btn:hover {
   transform: scale(1.10);
+}
+
+
+
+/* =================== L I S T   C A R D S   C O N T A I N E R =========================== */
+
+
+.list-cards-container {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow-y: auto;
+  gap: 1rem;
+}
+
+/* =================== L I S T   C A R D =========================== */
+
+.listcard > div {
+  margin-bottom: 0.4rem;
+}
+
+.list-job-status-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.list-job-status-section :first-child {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.4rem;
+}
+
+.status-open {
+  color: var(--green-800);
+  background-color: rgba(36, 163, 75, 0.2);
+  font-weight: 500;
+  padding: 0.4rem 0.8rem;
+  border-radius: 12px;
+}
+
+.status-closed {
+  color: #DC143C;
+  background-color: rgba(163, 36, 36, 0.2);
+  font-weight: 500;
+  padding: 0.4rem 0.8rem;
+  border-radius: 12px;
+}
+
+.status-pending {
+  color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.1);
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.list-job-actions-section {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.list-job-actions-section > * {
+  font-size: 12px;
+  border: 1px solid var(--green-900);
+  color: var(--green-950);
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+}
+
+.list-job-actions-section > *:hover {
+  box-shadow: 3px 3px 5px rgba(4, 37, 18, 0.5);
 }

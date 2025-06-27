@@ -63,7 +63,7 @@ const JobCard = React.forwardRef(({job, maxHeight}, ref) => {
         </div>
       </div>
       <div className={cardStyles["line-separator"]}></div>
-      <div>
+      <div className={cardStyles["jobcard-footer"]}>
         <small className={cardStyles["jobcard-location"]}><FaGlobeAmericas />{job.city}</small>
         <div>
           <button className={cardStyles["jobcard-view-btn"]}>

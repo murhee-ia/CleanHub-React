@@ -190,7 +190,7 @@ const ShowJobPage = () => {
                   >
                     Close Application
                   </button>
-                ) : null
+                ) : <span>Pending...</span>
               ) : (
                 <button 
                   className='single-page-btn'
