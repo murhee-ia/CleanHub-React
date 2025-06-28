@@ -10,6 +10,8 @@ import SavedJobsPage from "./pages/HomePages/SavedJobsPage";
 import JobApplicationsPage from "./pages/HomePages/JobApplicationsPage";
 import JobPostsPage from "./pages/HomePages/JobPostsPage";
 import NotificationsPage from "./pages/HomePages/NotificationsPage";
+import ShowJobPage from "./pages/HomePages/ShowJobPage";
+import CreateJobPage from "./pages/HomePages/JobPostsPages/CreateJobPage"
 
 const router = createBrowserRouter([
     {
@@ -44,6 +46,14 @@ const router = createBrowserRouter([
                 path: '/hub/notifications',
                 element: <NotificationsPage />
             },
+            {
+                path: '/hub/jobs/:jobID',
+                element: <ShowJobPage />
+            },
+            {
+                path: '/hub/create-job',
+                element: <CreateJobPage />
+            }
         ]
     },
     {

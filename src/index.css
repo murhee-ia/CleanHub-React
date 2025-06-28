@@ -131,8 +131,30 @@
 
 .h-main-container {
   width: 80%;
-  padding: 20px 20px 0 20px;
+  padding: 20px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+}
+
+
+/* REUSABLE STYLES ACROSS HOME PAGES */
+
+
+
+.single-page-btn {
+  background: var(--gradient-green);
+  color: white;
+  border: none;
+  padding: 16px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 12px rgba(46, 213, 77, 0.3);
+}
+
+.single-page-btn:hover {
+  transform: translateY(-2px);
 }
